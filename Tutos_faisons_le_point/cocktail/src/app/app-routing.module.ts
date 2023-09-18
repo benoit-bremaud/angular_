@@ -1,21 +1,18 @@
 // Import des modules Angular nécessaires.
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ErrorComponent } from './_utils/error/error.component';
 
 // Définition des routes avec leurs paramètres.
 const routes: Routes = [
   {
-    path: '', // Chemin correspondant à l'URL racine.
+    path: '', loadChildren: () => import('./public/public.module').then(m => m.PublicModule) 
+  },
+  {
+    path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
+  },
 
-    // loadChildren permet de charger le module de manière paresseuse (à la demande).
-    // Il renvoie une fonction qui effectue une importation dynamique du 'PublicModule'.
-    loadChildren: () => import('./public/public.module').then(m => m.PublicModule)
-
-    // L'importation dynamique ('import()') charge le module à la demande et renvoie une Promise.
-    // La méthode 'then' de la Promise se résout au 'PublicModule' lorsqu'il est chargé.
-    // 'm => m.PublicModule' associe le module résolu à 'PublicModule'.
-
-  }
+  { path: '**', component: ErrorComponent}
 ];
 
 @NgModule({
