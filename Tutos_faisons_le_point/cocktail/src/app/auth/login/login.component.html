@@ -1,0 +1,20 @@
+<div class="form_container">
+    <div>
+        <div>Email : {{ form.email }}</div>
+        <div>Passw : {{ form.password }} </div>
+    </div>
+    <br>
+    <form name="form" #f="ngForm">
+        <div class="group">
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" [(ngModel)]="form.email" #email="ngModel">
+        </div>
+        <div class="group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" [(ngModel)]="form.password" #password="ngModel">
+        </div>
+        <div class="group">
+            <button>Login</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,23 @@
+nav {
+    padding-left: 10px;
+}
+
+#sidemenu {
+    list-style: none;
+    padding: 8px;
+}
+
+#sidemenu ul {
+    list-style: none;
+    padding: 8px;
+}
+
+.simple_link {
+    display: block;
+    margin-bottom: 8px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
